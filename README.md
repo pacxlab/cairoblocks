@@ -7,3 +7,13 @@ With CairoBlocks, both new and experienced developers can generate Cairo program
 The platform will provide all the building blocks required to write a secured and safe smart contracts on Starknet.
 
 It will also allow users to create their own blocks or customise existing blocks based on the requirements of their programs.
+
+## Development
+Install and set up CairoBlocks using the commands:
+```bash
+# install dependencies
+npm i
+
+# run codebase locally
+npm start
+```

@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import { useEffect, useRef, useState } from "react";
-// import * as Blockly from "blockly";
 import "./App.css";
 import { blocks } from "./blocks/text";
 import { javascriptGenerator } from "blockly/javascript";
@@ -8,6 +7,7 @@ import { forBlock } from "./generators/javascript";
 import { toolbox } from "./toolbox";
 import * as Blockly from "blockly";
 import { save, load } from "./serialization";
+
 function App() {
   // Register the blocks and generator with Blockly
   Blockly.common.defineBlocks(blocks);
@@ -15,15 +15,16 @@ function App() {
 
   useEffect(() => {
     // Set up UI elements and inject Blockly
-    let blocklyDiv: any = document.getElementById("blocklyDiv");
+    const blocklyDiv = document.getElementById("blocklyDiv");
     const codeDiv = document.getElementById("generatedCode")?.firstChild;
     const outputDiv = document.getElementById("output");
 
     if (!blocklyDiv) {
       throw new Error(`div with id 'blocklyDiv' not found`);
-    } else {
-      console.log(blocklyDiv);
     }
+
+    // Remove previous workspace if there is any
+    blocklyDiv.innerHTML = "";
 
     const ws = Blockly.inject(blocklyDiv, { toolbox });
 
@@ -73,13 +74,15 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header">
+        <div className="title">CairoBlocks</div>
+      </div>
       <div id="pageContainer">
         <div id="blocklyDiv"></div>
         <div id="outputPane">
           <pre id="generatedCode">
             <code></code>
           </pre>
-          <div id="output"></div>
         </div>
       </div>
     </div>

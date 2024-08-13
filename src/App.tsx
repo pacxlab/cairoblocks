@@ -26,7 +26,11 @@ function App() {
     // Remove previous workspace if there is any
     blocklyDiv.innerHTML = "";
 
-    const ws = Blockly.inject(blocklyDiv, { toolbox });
+    const ws = Blockly.inject(blocklyDiv, {
+      toolbox,
+      grid: { spacing: 15, length: 25, colour: "#ccc", snap: true },
+      trashcan: true,
+    });
 
     // This function resets the code and output divs, shows the
     // generated code from the workspace, and evals the code.

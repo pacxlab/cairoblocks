@@ -9,6 +9,7 @@ import * as Blockly from "blockly";
 import { save, load } from "./serialization";
 
 import Editor from "@monaco-editor/react";
+import Header from "./Components/Header";
 
 function App() {
   const [generatedCode, setGeneratedCode] = useState("");
@@ -88,9 +89,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="header">
-        <div className="title">CairoBlocks</div>
-      </div>
+      <Header />
       <div id="pageContainer">
         <div id="blocklyDiv"></div>
         <div id="outputPane">

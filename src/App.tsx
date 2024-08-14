@@ -8,7 +8,10 @@ import { toolbox } from "./toolbox";
 import * as Blockly from "blockly";
 import { save, load } from "./serialization";
 
+import Editor from "@monaco-editor/react";
+
 function App() {
+  const [generatedCode, setGeneratedCode] = useState("");
   // Register the blocks and generator with Blockly
   Blockly.common.defineBlocks(blocks);
   Object.assign(javascriptGenerator.forBlock, forBlock);
@@ -16,7 +19,7 @@ function App() {
   useEffect(() => {
     // Set up UI elements and inject Blockly
     const blocklyDiv = document.getElementById("blocklyDiv");
-    const codeDiv = document.getElementById("generatedCode")?.firstChild;
+    const codeDiv = document.getElementById("generatedCode");
     const outputDiv = document.getElementById("output");
 
     if (!blocklyDiv) {
@@ -37,9 +40,14 @@ function App() {
     // In a real application, you probably shouldn't use `eval`.
     const runCode = () => {
       const code = javascriptGenerator.workspaceToCode(ws as Blockly.Workspace);
-      if (codeDiv) codeDiv.textContent = code;
+      // if (codeDiv) codeDiv.textContent = code;
 
-      if (outputDiv) outputDiv.innerHTML = "";
+      if (codeDiv) {
+        setGeneratedCode(code);
+        console.log("Code: ", code);
+      }
+
+      // if (outputDiv) outputDiv.innerHTML = "";
 
       eval(code);
     };
@@ -76,6 +84,8 @@ function App() {
     return () => {};
   }, []);
 
+  const code = "var message = 'Monaco Editor!' \nconsole.log(message);";
+
   return (
     <div className="App">
       <div className="header">
@@ -85,7 +95,12 @@ function App() {
         <div id="blocklyDiv"></div>
         <div id="outputPane">
           <pre id="generatedCode">
-            <code></code>
+            <Editor
+              language="javascript"
+              theme="vs-dark"
+              value={generatedCode}
+              options={{}}
+            />
           </pre>
         </div>
       </div>

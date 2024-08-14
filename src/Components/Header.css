@@ -1,12 +1,35 @@
 .header {
   height: 10vh;
-  background-color: rgba(0, 0, 0, 0.359);
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header * {
+  font-family: "Poppins";
 }
 
 .title {
   font-family: "Play", sans-serif;
   font-size: 3rem;
   margin-left: 25px;
-  padding-top: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.middle-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.middle-btns button {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  font-size: 2rem;
   color: white;
 }

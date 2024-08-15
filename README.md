@@ -1,5 +1,7 @@
 # CairoBlocks
 
+> Check development build [here](https://cairoblocks.onrender.com/)
+
 CairoBlocks is an EduTech learning platform with a primary focus on promoting the knowledge of Cairo and Starknet smart contracts among new and existing developers. 
 
 With CairoBlocks, both new and experienced developers can generate Cairo programs by arranging lego-like blocks in an interactive and intuitive interface.

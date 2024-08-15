@@ -13,6 +13,8 @@ import Header from "./Components/Header";
 
 function App() {
   const [generatedCode, setGeneratedCode] = useState("");
+  const [showERC20, setShowERC20] = useState(true);
+  const [showERC721, setShowERC721] = useState(false);
   // Register the blocks and generator with Blockly
   Blockly.common.defineBlocks(blocks);
   Object.assign(javascriptGenerator.forBlock, forBlock);
@@ -85,7 +87,14 @@ function App() {
     return () => {};
   }, []);
 
-  const code = "var message = 'Monaco Editor!' \nconsole.log(message);";
+  const resolveGeneratedCode: any = () => {
+    let _generatedCode = generatedCode;
+    if (showERC20) {
+      _generatedCode = "";
+    }
+
+    return _generatedCode;
+  };
 
   return (
     <div className="App">
@@ -97,7 +106,7 @@ function App() {
             <Editor
               language="rust"
               theme="vs-dark"
-              value={generatedCode}
+              value={resolveGeneratedCode()}
               options={{}}
             />
           </pre>

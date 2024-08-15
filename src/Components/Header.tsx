@@ -1,12 +1,12 @@
-import React from "react";
 import "./Header.css";
-import BlockImg from "../block-img.png";
+import BlockImg from "../assets/images/block-img.png";
+import CairoLangPNG from "../assets/images/cairolang.png";
+import SolidityJPEG from "../assets/images/solidity.jpeg";
 import RefreshSVG from "./refresh";
 
 const Header = () => {
   return (
     <>
-      {" "}
       <div className="header">
         <div className="logo">
           <div>CairoBlocks</div>
@@ -24,14 +24,32 @@ const Header = () => {
         <div className="ctrl-btns">
           <div className="view-ctrl">View</div>
           <div className="ctrl-btns-inner">
-            <button>BLOCK VIEW</button>
-            <button>TEXT VIEW</button>
+            <button>ERC20</button>
+            <button>ERC721</button>
           </div>
           <input type="range" style={{ backgroundColor: "red" }} />
         </div>
         <div className="mode-btns">
-          <div className="code">CODE</div>
-          <div className="decode">DECODE</div>
+          <div className="code">
+            CAIRO
+            <span>
+              <img
+                width="15px"
+                style={{ marginLeft: "4px" }}
+                src={CairoLangPNG}
+              />
+            </span>
+          </div>
+          <div className="decode">
+            SOLIDITY{" "}
+            <span>
+              <img
+                width="15px"
+                style={{ marginLeft: "4px" }}
+                src={SolidityJPEG}
+              />
+            </span>
+          </div>
         </div>
       </div>
     </>

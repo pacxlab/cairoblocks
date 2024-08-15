@@ -1,6 +1,6 @@
 .header {
   height: 10vh;
-  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.93);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,5 +52,75 @@
 .refresh-btn {
   color: white;
   margin-right: 30px;
+  cursor: pointer;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.93);
+  color: white;
+  border-top: 1px solid rgb(89, 89, 89);
+}
+
+.sub-header .ctrl-btns {
+  display: flex;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-ctrl {
+  background-color: white;
+  color: black;
+  margin: -3px;
+  height: 25px;
+  width: 50px;
+  text-align: left;
+  padding-left: 3px;
+}
+
+.ctrl-btns-inner button {
+  color: rgba(255, 255, 255, 0.628);
+  background-color: rgb(49, 48, 48);
+  font-weight: 600;
+  height: 25px;
+  width: 120px;
+}
+
+.mode-btns {
+  display: flex;
+  border-radius: 1px solid white;
+  margin: 5px;
+}
+
+.mode-btns .code {
+  background-color: white;
+  color: black;
+  height: 30px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mode-btns .decode {
+  height: 30px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 12px;
+  border: solid 1px white;
+  box-sizing: border-box;
   cursor: pointer;
 }

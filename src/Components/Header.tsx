@@ -4,7 +4,15 @@ import CairoLangPNG from "../assets/images/cairolang.png";
 import SolidityJPEG from "../assets/images/solidity.jpeg";
 import RefreshSVG from "./refresh";
 
-const Header = () => {
+type HeaderProps = {
+  toggleShowERC20: () => void;
+  toggleShowERC721: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({
+  toggleShowERC20,
+  toggleShowERC721,
+}) => {
   return (
     <>
       <div className="header">
@@ -24,8 +32,8 @@ const Header = () => {
         <div className="ctrl-btns">
           <div className="view-ctrl">View</div>
           <div className="ctrl-btns-inner">
-            <button>ERC20</button>
-            <button>ERC721</button>
+            <button onClick={() => toggleShowERC20()}>ERC20</button>
+            <button onClick={() => toggleShowERC721()}>ERC721</button>
           </div>
           <input type="range" style={{ backgroundColor: "red" }} />
         </div>

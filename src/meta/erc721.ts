@@ -1,4 +1,4 @@
-use starknet::ContractAddress;
+const erc721: string = `use starknet::ContractAddress;
 
 #[starknet::interface]
 pub trait IERC721<TContractState> {
@@ -294,4 +294,6 @@ mod ERC721 {
             self.emit(Transfer { from: owner, to: Zeroable::zero(), token_id: token_id });
         }
     }
-}
+}`;
+
+export default erc721;

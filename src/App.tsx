@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { blocks } from "./blocks/text";
 import { javascriptGenerator } from "blockly/javascript";
@@ -11,9 +11,12 @@ import { save, load } from "./serialization";
 import Editor from "@monaco-editor/react";
 import Header from "./Components/Header";
 
+import erc20Meta from "./meta/erc20";
+import erc721Meta from "./meta/erc721";
+
 function App() {
   const [generatedCode, setGeneratedCode] = useState("");
-  const [showERC20, setShowERC20] = useState(true);
+  const [showERC20, setShowERC20] = useState(false);
   const [showERC721, setShowERC721] = useState(false);
   // Register the blocks and generator with Blockly
   Blockly.common.defineBlocks(blocks);
@@ -87,10 +90,24 @@ function App() {
     return () => {};
   }, []);
 
+  const toggleShowERC20 = () => {
+    setShowERC721(false);
+    setShowERC20(true);
+  };
+
+  const toggleShowERC721 = () => {
+    setShowERC20(false);
+    setShowERC721(true);
+  };
+
   const resolveGeneratedCode: any = () => {
     let _generatedCode = generatedCode;
     if (showERC20) {
-      _generatedCode = "";
+      _generatedCode = erc20Meta;
+    }
+
+    if (showERC721) {
+      _generatedCode = erc721Meta;
     }
 
     return _generatedCode;
@@ -98,7 +115,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header
+        toggleShowERC20={toggleShowERC20}
+        toggleShowERC721={toggleShowERC721}
+      />
       <div id="pageContainer">
         <div id="blocklyDiv"></div>
         <div id="outputPane">

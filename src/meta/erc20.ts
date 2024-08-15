@@ -1,4 +1,4 @@
-#[starknet::interface]
+const erc20: string = `#[starknet::interface]
 pub trait IERC20<TContractState> {
     fn get_name(self: @TContractState) -> felt252;
     fn get_symbol(self: @TContractState) -> felt252;
@@ -204,4 +204,6 @@ pub mod erc20 {
                 );
         }
     }
-}
+}`;
+
+export default erc20;

@@ -16,7 +16,7 @@ import erc721Meta from "./meta/erc721";
 
 function App() {
   const [generatedCode, setGeneratedCode] = useState("");
-  const [showERC20, setShowERC20] = useState(false);
+  const [showERC20, setShowERC20] = useState(true);
   const [showERC721, setShowERC721] = useState(false);
   // Register the blocks and generator with Blockly
   Blockly.common.defineBlocks(blocks);

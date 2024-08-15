@@ -95,7 +95,7 @@ function App() {
         <div id="outputPane">
           <pre id="generatedCode">
             <Editor
-              language="javascript"
+              language="rust"
               theme="vs-dark"
               value={generatedCode}
               options={{}}

@@ -1,6 +1,6 @@
 import "./Header.css";
 import BlockImg from "../assets/images/block-img.png";
-import CairoLangPNG from "../assets/images/cairolang.png";
+import InkLang from "../assets/images/ink-icon.png";
 import SolidityJPEG from "../assets/images/solidity.jpeg";
 import RefreshSVG from "./refresh";
 
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({
     <>
       <div className="header">
         <div className="logo">
-          <div>CairoBlocks</div>
+          <div>PolkaBlocks</div>
           <img height="60px" width="60px" src={BlockImg} />
         </div>
         <div className="middle-btns">
@@ -39,14 +39,14 @@ const Header: React.FC<HeaderProps> = ({
         </div>
         <div className="mode-btns">
           <div className="code">
-            CAIRO
-            <span>
+            Ink!
+            {<span>
               <img
                 width="15px"
                 style={{ marginLeft: "4px" }}
-                src={CairoLangPNG}
+                src={InkLang}
               />
-            </span>
+            </span> }
           </div>
           <div className="decode">
             SOLIDITY{" "}

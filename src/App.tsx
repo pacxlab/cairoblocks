@@ -107,8 +107,8 @@ function App() {
     }
 
     if (showERC721) {
-      _generatedCode = erc721Meta;
-    }
+       _generatedCode = erc721Meta;
+     }
 
     return _generatedCode;
   };

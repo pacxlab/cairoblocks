@@ -45,17 +45,17 @@ function App() {
     // generated code from the workspace, and evals the code.
     // In a real application, you probably shouldn't use `eval`.
     const runCode = () => {
-      const code = javascriptGenerator.workspaceToCode(ws as Blockly.Workspace);
+      //const code = javascriptGenerator.workspaceToCode(ws as Blockly.Workspace);
       // if (codeDiv) codeDiv.textContent = code;
 
-      if (codeDiv) {
-        setGeneratedCode(code);
-        console.log("Code: ", code);
-      }
+      //if (codeDiv) {
+        //setGeneratedCode(code);
+        //console.log("Code: ", code);
+      //}
 
       // if (outputDiv) outputDiv.innerHTML = "";
 
-      eval(code);
+      //eval(code);
     };
 
     if (ws) {
